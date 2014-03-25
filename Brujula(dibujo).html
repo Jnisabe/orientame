@@ -1,0 +1,164 @@
+<html>
+	<head>
+		<title>Prueba</title>
+	</head>
+	<body>
+			<canvas id="canvas" width="900" height="600">
+				<p>No soporta HTML5,pruebe otro navegador</p>
+			</canvas>
+			<script type="text/javascript">
+				var canvas = document.getElementById("canvas");
+				var ctx = canvas.getContext("2d");
+				var myVar=setInterval(function(){giro()},5000);
+				var px=300;
+				var py=190;
+				var px1=270;
+				var py1=300;
+				var px2=330;
+				var Py=400;
+				var i=0;
+				pintado();
+				
+	
+	function getRadianAngle(degreeValue) {
+		return degreeValue * Math.PI / 180;
+	}	 	
+				
+				
+	function giro(){
+	  canvas.width = canvas.width;
+	  //ctx.translate(300, 300);
+	  //ctx.rotate(getRadianAngle(45));
+	  pintado();
+	}
+			
+	function agujas(){
+	
+	//Dibujamos triangulo superior
+    ctx.beginPath();
+    ctx.moveTo(px,py);
+    ctx.lineTo(px1,py1);
+    ctx.lineTo(px2,py1);
+    ctx.lineTo(px,py);
+	ctx.fillStyle='black';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=1;
+    ctx.fill();
+    ctx.stroke(); 
+	
+	//Dibujamos triangulo inferior
+	ctx.beginPath();
+    ctx.moveTo(px,Py);
+    ctx.lineTo(px1,py1);
+    ctx.lineTo(px2,py1);
+    ctx.lineTo(px,Py);
+	ctx.fillStyle='black';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=1;
+    ctx.fill();
+    ctx.stroke(); 
+	
+	//i+=1;
+	
+	
+	}
+
+	function pintado(){
+	 //Dibujamos circulo
+      ctx.beginPath();
+      ctx.arc(300, 300, 150, 0, 2 * Math.PI, false);
+      ctx.fillStyle = 'yellow';
+      ctx.fill();
+      ctx.lineWidth = 5;
+      ctx.strokeStyle = 'black';
+      ctx.stroke();
+	
+	
+	//Dibujamos N
+	ctx.beginPath();
+    ctx.moveTo(290,160);
+    ctx.lineTo(290,180);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+    ctx.stroke(); 
+	
+	ctx.beginPath();
+    ctx.moveTo(290,160);
+    ctx.lineTo(310,180);
+	ctx.lineTo(310,160);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+	ctx.stroke(); 
+	
+	//Dibujamos S	
+	ctx.beginPath();
+	ctx.arc(300,410, 7, 110, 2 * Math.PI, false);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+	ctx.stroke(); 
+	
+	ctx.beginPath();
+	ctx.arc(303,427, 6, 180, 2 * Math.PI, false);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+	ctx.stroke(); 
+	
+	ctx.beginPath();
+    ctx.moveTo(292,410);
+    ctx.lineTo(303,420);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+    ctx.stroke();
+	
+	ctx.beginPath();
+    ctx.moveTo(310,427);
+    ctx.lineTo(292,427);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+    ctx.stroke();
+	
+	
+	//Dibujamos la E
+	ctx.beginPath();
+    ctx.moveTo(400,290);
+    ctx.lineTo(400,320);
+	ctx.lineTo(420,320);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+    ctx.stroke();
+	
+	ctx.beginPath();
+    ctx.moveTo(400,290);
+    ctx.lineTo(420,290);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+    ctx.stroke();
+	
+	ctx.beginPath();
+    ctx.moveTo(400,305);
+    ctx.lineTo(420,305);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+    ctx.stroke();
+	
+	
+	//Dibujamos W
+	ctx.beginPath();
+    ctx.moveTo(160,290);
+    ctx.lineTo(170,320);
+	ctx.lineTo(180,290);
+	ctx.lineTo(190,320);
+	ctx.lineTo(200,290);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth=2;
+    ctx.stroke();
+	
+	
+	agujas();
+	
+	ctx.save();
+	}
+
+	</script>
+	</body>
+</html>
